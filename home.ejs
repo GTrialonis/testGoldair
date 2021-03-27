@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+
+<h3>FLIGHTS</h3>
+
+<table class="table">
+  <thead style="text-align: center">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Carrier</th>
+      <th scope="col">Flight #</th>
+      <th scope="col">ETA</th>
+      <th scope="col">ETD</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <% posts.forEach((post) => {%>
+  <tbody>
+    <tr[post]>
+      <th scope="row"><%= post.date %></th>
+      <td contenteditable="true"><%= post.carrier %></td>
+      <td contenteditable="true"><%= post.fltNo %></td>
+      <td contenteditable="true"><%= post.eta %></td>
+      <td contenteditable="true"><%= post.etd %></td>
+      <td contenteditable="true"><%= post.notes %></td>
+    </tr>
+  </tbody>
+  <%});%>
+</table>
+
+<%- include('partials/footer'); -%>
